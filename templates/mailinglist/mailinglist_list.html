@@ -13,7 +13,7 @@
       <ul class="mailing-list-list">
         {% for mailinglist in mailinglist_list %}
           <li class="mailinglist-item">
-            <a href="#% url 'mailinglist:manage' mailinglist.pk %}">{{ mailinglist.name }}</a>
+            <a href="{% url 'mailinglist:manage' mailinglist.pk %}">{{ mailinglist.name }}</a>
           </li>
         {% empty %}
         {% endfor %}

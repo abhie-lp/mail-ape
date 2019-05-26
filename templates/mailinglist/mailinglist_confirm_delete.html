@@ -8,6 +8,6 @@
     {% csrf_token %}
     <p>Are you sure you want to delete {{ object.name }}??</p>
     <button class="btn btn-danger" type="submit">Delete</button>
-    <a class="btn btn-primary btn-lg" href="#% url 'mailinglist:manage' object.id %}">No</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'mailinglist:manage' object.id %}">No</a>
   </form>
 {% endblock body %}

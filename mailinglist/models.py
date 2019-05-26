@@ -15,7 +15,7 @@ class MailingList(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("mailing:manage", args=[self.id])
+        return reverse("mailinglist:manage", args=[self.id])
 
     def user_can_use_mailing_list(self, user):
         return user == self.owner

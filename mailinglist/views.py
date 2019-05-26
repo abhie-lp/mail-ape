@@ -25,3 +25,9 @@ class MailingListDeleteView(LoginRequiredMixin,
                             generic.DeleteView):
     model = models.MailingList
     success_url = reverse_lazy("mailinglist:list")
+
+
+class MailingListDetailView(LoginRequiredMixin,
+                            mixins.UserCanUseMailingList,
+                            generic.DetailView):
+    model = models.MailingList
