@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Thank you for subscribing to {{ mailinglist.name }}{% endblock title %}
+
+{% block body %}
+  <div class="col-sm-12">
+    <h1>Thank you for subscribing to {{ mailinglist.name }}</h1>
+    <p>Check your email for a confirmation email.</p>
+  </div>
+{% endblock body %}
