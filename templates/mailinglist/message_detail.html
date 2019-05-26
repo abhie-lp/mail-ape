@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load markdownify %}
+
+{% block title %}{{ message.subject }}{% endblock title %}
+
+{% block body %}
+  <h1>{{ message.subject }}</h1>
+  <div>{{ message.body|markdownify }}</div>
+{% endblock body %}

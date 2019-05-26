@@ -128,3 +128,9 @@ class CreateMessageView(LoginRequiredMixin, generic.CreateView):
             raise PermissionError()
 
         return mailing_list
+
+
+class MessageDetailView(LoginRequiredMixin,
+                        mixins.UserCanUseMailingList,
+                        generic.DetailView):
+    model = models.Message

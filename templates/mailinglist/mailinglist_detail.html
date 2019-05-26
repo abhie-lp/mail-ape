@@ -19,7 +19,7 @@
   </div>
   <ul>
     {% for message in mailinglist.message_set.all %}
-      <a href="#% url 'mailinglist:view_message' message.id %}">{{ message.subject }}</a>
+      <a href="{% url 'mailinglist:view_message' message.id %}">{{ message.subject }}</a>
     {% endfor %}
   </ul>
 
