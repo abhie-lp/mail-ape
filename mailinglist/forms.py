@@ -24,3 +24,15 @@ class MessageForm(forms.ModelForm):
     def __init__(self, **kwargs):
         super(MessageForm, self).__init__(**kwargs)
         self.fields["mailing_list"].disabled = True
+
+
+class MailingListForm(forms.ModelForm):
+
+    class Meta:
+        model = models.MailingList
+        fields = "name", "owner",
+        widgets = {"owner": forms.HiddenInput()}
+
+    def __init__(self, **kwargs):
+        super(MailingListForm, self).__init__(**kwargs)
+        self.fields["owner"].disabled = True
