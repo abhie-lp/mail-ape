@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <a class="navbar-brand" href="#">Mail Ape</a>
+      <a class="nav-link" href="{% url 'mailinglist:list' %}">Your Mailing Lists</a>
+      <ul class="navbar-nav ml-auto">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <span class="navbar-text font-weight-bold text-muted">{{ request.user.username }}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#% url 'user:logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="#% url 'user:login' %}">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#% url 'user:register' %}">Register</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    {% block body %}{% endblock body %}
+  </div>
+</body>
+</html>

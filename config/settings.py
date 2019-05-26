@@ -109,3 +109,10 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+MARDOWNIFY_STRIP = False
+MARKDOWNIFY_WHITELIST_TAGS = ['a', 'blockquote', 'code', 'em', 'h1', 'h2', 'h3', 'h4',
+                              'h5', 'h6', 'li', 'ol', 'p', 'strong', 'ul']
