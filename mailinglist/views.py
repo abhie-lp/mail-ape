@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from . import models, mixins
+from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
+
+class MailingListListView(LoginRequiredMixin, generic.ListView):
+
+    def get_queryset(self):
+        return models.MailingList.objects.filter(owner=self.request.user)
