@@ -4,6 +4,7 @@ from django.urls import path, include
 app_name = "mailinglist"
 
 uuid_urls = [
+    path("unsubscribe/", views.UnsubscribeView.as_view(), name="unsubscribe"),
     path("delete/", views.MailingListDeleteView.as_view(), name="delete"),
     path("manage/", views.MailingListDetailView.as_view(), name="manage"),
     path("subscribe/", views.SubscribeToMailingListView.as_view(),

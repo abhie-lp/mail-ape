@@ -76,3 +76,12 @@ class ConfirmSubscriptionView(generic.DetailView):
         subscriber.confirmed = True
         subscriber.save()
         return subscriber
+
+
+class UnsubscribeView(generic.DeleteView):
+    model = models.Subscriber
+    template_name = "mailinglist/unsubscribe.html"
+
+    def get_success_url(self):
+        mailing_list = self.object.mailing_list
+        return reverse("mailinglist:manage", args=[mailing_list.id])

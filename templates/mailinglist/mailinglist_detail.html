@@ -29,7 +29,7 @@
       <li>
         {{ subscriber.email }}
         {{ subscriber.confirmed|yesno:"confirmed,unconfirmed" }}
-        <a href="#% url 'mailinglist:unsubscribe' subscriber.id %}">Unsubscribe</a>
+        <a href="{% url 'mailinglist:unsubscribe' subscriber.id %}">Unsubscribe</a>
       </li>
     {% endfor %}
   </ul>
