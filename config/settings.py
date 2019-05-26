@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "mailinglist.apps.MailinglistConfig",
+    "crispy_forms",
+    "markdownify",
 ]
 
 MIDDLEWARE = [
