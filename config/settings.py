@@ -117,3 +117,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 MARDOWNIFY_STRIP = False
 MARKDOWNIFY_WHITELIST_TAGS = ['a', 'blockquote', 'code', 'em', 'h1', 'h2', 'h3', 'h4',
                               'h5', 'h6', 'li', 'ol', 'p', 'strong', 'ul']
+
+LOGIN_URL = "user:login"
+LOGOUT_URL = "user:logout"
+LOGIN_REDIRECT_URL = "mailinglist:list"
+LOGOUT_REDIRECT_URL = "user:login"

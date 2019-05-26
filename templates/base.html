@@ -20,15 +20,15 @@
             <span class="navbar-text font-weight-bold text-muted">{{ request.user.username }}</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#% url 'user:logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="#% url 'user:login' %}">Login</a>
+            <a class="nav-link" href="{% url 'user:login' %}">Login</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#% url 'user:register' %}">Register</a>
+            <a class="nav-link" href="{% url 'user:register' %}">Register</a>
           </li>
         {% endif %}
       </ul>
