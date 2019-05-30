@@ -1,4 +1,4 @@
-from . import emails
+from . import tasks
 
 from django.conf import settings
 from django.db import models
@@ -47,7 +47,7 @@ class Subscriber(models.Model):
             self.send_confirmation_email()
 
     def send_confirmation_email(self):
-        emails.send_confirmation_email(self)
+        tasks.send_confirmation_email_to_subscriber(self.id)
 
 
 class Message(models.Model):
