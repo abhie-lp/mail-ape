@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    {% block body %}
+    {% endblock body %}
+
+    <p class="text-muted">Click <a class="font-weight-bold text-primary" href="{{ unsubscription_link }}">here</a> to unsubscribe from this mailing list</p>
+  <p>Sent with Mail Ape..!!</p>
+  </body>
+</html>

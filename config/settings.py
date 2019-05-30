@@ -122,3 +122,13 @@ LOGIN_URL = "user:login"
 LOGOUT_URL = "user:logout"
 LOGIN_REDIRECT_URL = "mailinglist:list"
 LOGOUT_REDIRECT_URL = "user:login"
+
+EMAIL_HOST = "smtp.gmail.com"
+with open(os.path.join(BASE_DIR, "../Personal/id")) as email:
+    EMAIL_HOST_USER = email.readline().strip()
+    EMAIL_HOST_PASSWORD = email.read().strip()
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+MAILINGLIST_FROM_EMAIL = "noreply@example.com"
+MAILINGLIST_LINK_DOMAIN = "http://localhost:8000"
