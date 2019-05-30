@@ -1,0 +1,6 @@
+Django
+django-markdownify
+django-crispy-forms
+celery
+celery[redis]
+django-celery-results

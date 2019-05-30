@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "mailinglist.apps.MailinglistConfig",
     "crispy_forms",
     "markdownify",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,6 @@ EMAIL_USE_TLS = True
 
 MAILINGLIST_FROM_EMAIL = "noreply@example.com"
 MAILINGLIST_LINK_DOMAIN = "http://localhost:8000"
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "django-db"
